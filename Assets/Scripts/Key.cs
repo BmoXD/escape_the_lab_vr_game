@@ -12,6 +12,7 @@ public class Key : MonoBehaviour
 	private Animator animator;
 	public Material instancedMaterial;
 	private Renderer meshRenderer;
+	private bool keyUsed;
 
 	private void Start()
 	{
@@ -23,6 +24,7 @@ public class Key : MonoBehaviour
 
 	public void UseKey(Keyhole keyhole)
 	{
+		keyUsed = true;
 		// Detach the key from the player's hand
 		Debug.Log("Key used");
 		interactable.enabled = false;
@@ -31,17 +33,9 @@ public class Key : MonoBehaviour
 			rb.isKinematic = true;
 		}
 
-		// // Position the key
-		// Vector3 keyholeDirection = keyhole.transform.forward;
-		// Vector3 keyPosition = keyhole.transform.position - keyholeDirection * 0.5f; // Adjust as needed
-		// transform.position = keyPosition;
-		// transform.rotation = Quaternion.LookRotation(keyholeDirection, Vector3.up);
-
-
 		transform.SetParent(keyhole.transform);
 		transform.localPosition = new Vector3 (0,0,-0.2f);
-		//transform.localRotation = Quaternion.LookRotation(keyhole.transform.forward);
-
+		
 		AlignLocalZAxis(transform, keyhole.transform);
 		
 		// Play the key insertion animation
@@ -72,6 +66,10 @@ public class Key : MonoBehaviour
 	private void OnValidate()	
 	{
 		meshRenderer = GetComponentInChildren<Renderer>();
+		if (keyUsed == true)
+		{
+			rb.isKinematic = true;
+		}
 	}
 	
 	public void ApplyInstancedMaterial(Material material)

@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class BB_Door : MonoBehaviour
+public class Door : MonoBehaviour
 {
 	[Tooltip("Material to apply.")]
 	public Material doorBoundMaterial;

@@ -5,7 +5,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 namespace UnityEngine.XR.Content.Interaction
 {
-    public class CustomXRLever : XRBaseInteractable
+    public class Lever : XRBaseInteractable
     {
         [SerializeField]
         [Tooltip("The lever's handle that can be manipulated")]
@@ -122,14 +122,6 @@ namespace UnityEngine.XR.Content.Interaction
                 m_Handle.localRotation = m_InitialRotation;
             }
         }
-
-        // private void UnlockItems()
-        // {
-        //     foreach (var unlocker in m_ItemsToUnlock)
-        //     {
-        //         unlocker.UnlockItem();
-        //     }
-        // }
 
         private System.Collections.IEnumerator SmoothAnimation(float targetAngle)
         {

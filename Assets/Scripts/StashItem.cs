@@ -9,7 +9,6 @@ public class StashItem : MonoBehaviour
     private bool isNearStash = false;
     private bool isStashed = false;
     private Vector3 originalScale;
-    private Vector3 storedScale; // Scale when item is stored in stash
 
     void Start()
     {
@@ -17,7 +16,7 @@ public class StashItem : MonoBehaviour
         interactable.selectEntered.AddListener(OnItemGrabbed); // Updated event name
         interactable.selectExited.AddListener(OnItemReleased); // Updated event name
         originalScale = transform.localScale;
-        storedScale = originalScale * 0.5f;
+        interactable.trackScale = false;
 
         if (dimensionManager == null)
         {
@@ -114,6 +113,8 @@ public class StashItem : MonoBehaviour
             // Add the item to the current dimension
             dimensionManager.AddObjectToDimension(dimensionManager.CurrentDimensionLetter, gameObject);
         }
+
+        ScaleItem(originalScale);
     }
 
     private void ScaleItem(Vector3 scale)
