@@ -22,7 +22,7 @@ This mechanic is inspired by a **Portal 2** mod called **Portal Reloaded**.
 - Custom XR interactable objects
 - Slight Post-Processing effects
 - VR game-desing
-- 3D modelling
+- 3D modelling and texturing
 
 ---
 
