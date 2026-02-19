@@ -16,6 +16,13 @@ For example:
 
 This mechanic is inspired by a **Portal 2** mod called **Portal Reloaded**.
 
+## What I Practiced
+- Unity's XR Toolkit
+- Shader creation
+- Custom XR interactable objects
+- Slight Post-Processing effects
+- VR game-desing
+
 ---
 
 ## Screenshots
