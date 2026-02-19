@@ -4,7 +4,7 @@ A small **VR escape room demo** built around a dimension-shifting puzzle mechani
 
 ---
 
-## Concept
+## About the Project
 The core gameplay revolves around traveling between two different **timelines / dimensions**.  
 Both versions of the room share the same layout but with subtle differences.
 
